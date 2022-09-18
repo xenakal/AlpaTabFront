@@ -1,0 +1,12 @@
+.listContainer {
+    -webkit-box-shadow: 4em 4em 4em 4em rgba(0, 0, 0, 0.47);
+    box-shadow: 4em 4em 4em 4em rgba(201, 201, 201, 0.47);
+    padding: 20px;
+    margin: 20px;
+
+    .listTitle {
+      font-weight: 500;
+      color: gray;
+      margin-bottom: 15px;
+    }
+  }
