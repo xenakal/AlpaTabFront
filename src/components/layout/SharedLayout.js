@@ -1,14 +1,15 @@
-import React from 'react';
-import Topbar from '../topbar/Topbar';
+import Topbar  from '../topbar/Topbar';
 import "./sharedLayout.scss"
 
 const SharedLayout = ({ children }) => {
      return (
         <>
             <Topbar/>
-            <main>
-                <div className="pagecontent">
-                    {children}
+            <main className="background">
+                <div className="root">
+                    <div className="pagecontent">
+                        {children}
+                    </div>
                 </div>
             </main>
         </>

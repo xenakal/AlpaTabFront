@@ -1,3 +1,21 @@
-.pagecontent {
-    padding: 3em;
+.background { 
+    // background-color: var(--main-color-2);
+}
+
+.root {
+
+    .pagecontent {
+        // -webkit-box-shadow: 4em 4em 4em 4em rgba(0, 0, 0, 0.47);
+        // box-shadow: -1.2em 1em 1em var(--main-color-1);
+        box-shadow: -1.2em 1em 1em lightgray;
+        padding: 20px;
+        background-color: var(--main-color-2);
+        border: thin solid black;
+        min-height: 600px;
+        max-width: 1300px;
+        min-width: 1000px;
+        margin: 2em auto;
+        border-radius: 5px;
+
+    }
 }

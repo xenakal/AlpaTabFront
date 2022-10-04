@@ -1,31 +1,42 @@
 import "./balance.scss"
+import {getTransactionColumnNames} from "../../columnDefs"
 import Datatable from "../../components/datatable/Datatable"
 import Axios from "axios"
 import { React, useState, useEffect } from 'react'
 
-
-function getColumnNames() {
-  return [
-    { field: "id", headerName: "Transaction ID", flex:1 },
-    { field: "nickname", headerName: "User Nickname", flex:1 },
-    { field: "amount", headerName: "Amount", flex:1 },
-    { field: "transactiontype", headerName: "Transaction Type", flex:1 },
-    { field: "timestamp", headerName: "Timestamp", flex:1 },
-    { field: "description", headerName: "Description", flex:1 },
-  ];
-}
-
 export default function Balance() {
-    const [balance, setBalance] = useState(0);
-    const [transactions, setTransactions] = useState();
 
+  const [balance, setBalance] = useState(0);
+  const [userTransactions, setUserTransactions] = useState([]);
+
+  useEffect(() => {
+      fetchAndSetUserTransactions();
+  }, []);
+
+  const fetchAndSetUserTransactions = async () => {
+    if ({})
+    await Axios.get("https://localhost:7228/transactions/user/Lele1")
+         .then((res) => {
+            const req_data = res.data;
+            setUserTransactions(req_data);
+            const userBalance = req_data.map(_ => _.amount)
+                                     .reduce((partialSum, amount) => partialSum + amount, 0);
+            setBalance(userBalance);
+         })
+         .catch(err => console.error(`MyError: ${err}`));
+    }
+  
     return (
         <div>
             <div className="balanceContainer">
                 Total balance: {balance} &euro;
             </div>
             <div className="listContainer">
-                <Datatable title="User Transactions History" inputRows={""} columnTitles={getColumnNames()}></Datatable>
+                <Datatable 
+                  title="User Transactions History" 
+                  inputRows={userTransactions} 
+                  columnTitles={getTransactionColumnNames()}>
+                </Datatable>
             </div>
         </div>
     )

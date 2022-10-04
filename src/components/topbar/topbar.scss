@@ -1,6 +1,7 @@
 .topbar {
-  margin-bottom: 1em; 
-  font-size:1.2em;
+  margin-bottom: 0em; 
+  font-size:1.1em;
+  background: linear-gradient(var(--main-color-1), var(--main-color-2));
 
   .navbar-brand {
     padding-left: 3em;
@@ -14,5 +15,10 @@
   .right-side-container {
     margin-left: auto;
     padding-right: 3em;
+    display: flex;
+  }
+
+  .loginWrapper {
+    // padding-left: 2.5em;
   }
 }

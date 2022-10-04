@@ -1,0 +1,39 @@
+.profileContainer {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    -webkit-box-shadow: 4em 4em 4em 4em rgba(0, 0, 0, 0.47);
+    box-shadow: 4em 4em 4em 4em rgba(201, 201, 201, 0.47);
+    padding: 3em;
+    border-radius: 15px;
+
+    .imgWrapper {
+        display: flex;
+        justify-content: center;
+        border-bottom:rgba(0, 0, 0, 0.47);
+        border-bottom-style: solid;
+        border-bottom-width: thick;
+
+        .profpic {
+            max-height: 160px;
+        }
+    }
+
+    .error {
+        display: flex;
+        justify-content: center;
+        padding-top:0.6em;
+        color: red;
+        opacity: 0;
+    }
+
+    .labels {
+        color: gray;
+    }
+
+    .buttonsWrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+    }
+}
