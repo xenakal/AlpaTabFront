@@ -1,6 +1,8 @@
 .datatable {
     height: 700px;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
+    margin-top: 2em;
     
     .datagrid {
       height: 80%;
@@ -17,13 +19,54 @@
   
       .link {
         text-decoration: none;
-        color: var(--main-color-4);
+        // color: var(--alpatab-light_red);
+        color: #ffb86f;
         font-size: 16px;
         font-weight: 400;
-        border: 1px solid var(--main-color-4);
+        border: 1px solid #ffb86f;
         padding: 5px;
         border-radius: 5px;
         cursor: pointer;
       }
+    }
+
+    .MuiButtonBase-root {
+      color: var(--alpatab-blue);
+    }
+
+    .MuiButtonBase-root.addEntryButton {
+      margin-right: 2em;
+    }
+
+    .MuiDataGrid-cell {
+      color: var(--alpatab-blue_black);
+    }
+
+    .MuiDataGrid-columnHeader {
+      color: var(--alpatab-red);
+    }
+
+    .MuiInputBase-root {
+      color: var(--alpatab-blue_black);
+    }
+
+    .right-side-toolbar-container {
+      margin-left: auto;
+      padding-right: 2vw;
+      display: flex;
+    }
+  
+    img {
+      height: 18px;
+      width: 18px;
+    }
+
+    .addEntryButton {
+      // font-size: medium;
+      // font-weight: bold;
+    }
+
+    .inlineForm {
+      display: inline;
     }
 }

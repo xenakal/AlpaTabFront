@@ -1,4 +1,3 @@
-import "./transactions.scss";
 import { getTransactionColumnNames } from "../../columnDefs";
 import Datatable from "../../components/datatable/Datatable";
 import { useState, useEffect } from 'react';
@@ -37,15 +36,16 @@ const Transactions: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="contentPage">
+      <h1>Transactions list</h1>
       <div className="listContainer">
         <Datatable 
           title={"Transactions List"}
           inputRows={transactions} 
           columnTitles={getTransactionColumnNames()}
           addEntryLink="/transactions/new"
-          handleRowClick={handleRowClick}>;
-
+          handleRowClick={handleRowClick}
+        >;
         </Datatable>
       </div>
     </div>

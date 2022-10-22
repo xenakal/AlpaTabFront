@@ -136,8 +136,9 @@ const ModifTransactionForm: React.FC = () => {
     if (!isModifying) {
         buttons = (
                 <>
-                    <Button type="submit" form="transactionForm" variant="outlined" style={{marginTop:"3em", color:"var(--main-color-4)", borderColor:"var(--main-color-4)"}}>Modify</Button>
-                    <Button type="submit" onClick={() => setIsDeleting(true)} form="transactionForm" variant="outlined" style={{marginTop:"3em", color:"var(--main-color-4)", borderColor:"var(--main-color-4)", marginLeft: "2em"}}>Delete</Button>
+                    <Button type="submit" form="transactionForm" variant="outlined">Modify</Button>
+                    <Button type="submit" onClick={() => setIsDeleting(true)} form="transactionForm" variant="outlined">Delete</Button>
+                    <Button type="submit" onClick={() => setIsDeleting(true)} form="transactionForm" variant="outlined">Repeat</Button>
                 </>
         )
     }
@@ -151,32 +152,28 @@ const ModifTransactionForm: React.FC = () => {
 
     // return transactionAdded ? <Redirect to="/transactions" push/> : 
     return (
-        <>
+        <div className="contentPage">
             <h1>Transaction ID: {transactionId}</h1>
             <form onSubmit={onSubmit} id="transactionForm" method="post" className="transactionProfile"> 
                 {/* <TransactionProfile></TransactionProfile> */}
-                <div className="row-mt-2">
-                    <div className="col-md-6">
+                    <div className="userInputWrapper">
                         <label className="labels" htmlFor="userInput">User</label>
                         <input readOnly onChange={(e) => setUsername(e.target.value)} id="userInput" type="text" className="form-control" value={username}></input>
                         {/* <ProfileEntryInput defaultval="Choose the user..."/> */}
                     </div>
-                </div>
-                <div className="row-mt-2">
-                    <div className="col-md-6">
+                    <div className="userInputWrapper">
                         <label className="labels" htmlFor="amountInput">Amount</label>
                         <input readOnly onChange={(e) => setAmount(parseFloat(e.target.value))} id="amountInupt" type="number" className="col-md-6 form-control" value={amount}></input>
                     </div>
-                    <div className="col-md-6">
+                    <div className="userInputWrapper">
                         <label className="labels" htmlFor="transactionTypeInput">Transaction Type</label>
                         <input readOnly onChange={(e) => setTransactionType(e.target.value)} id="transactionTypeInupt" type="text" className="col-md-6 form-control" value={transactionType}></input>
                     </div>
-                </div>
-                <div className="col-md-6">
+                <div className="userInputWrapper">
                     <label className="labels" htmlFor="timestampInput">Transaction Type</label>
                     <input readOnly id="timestampInupt" type="date" onChange={(e) => setTimestamp(e.target.value)} className="col-md-6 form-control" value={timestamp}></input>
                 </div>
-                <div className="col-md-6">
+                <div className="userInputWrapper">
                     <label className="labels" htmlFor="descriptionInput">Description</label>
                     <input readOnly onChange={(e) => setDescription(e.target.value)} id="descriptionInput" type="text" className="col-md-6 form-control" value={description}></input>
                 </div>
@@ -193,8 +190,51 @@ const ModifTransactionForm: React.FC = () => {
                 </Alert>
             </Snackbar>
 
-        </>
+        </div>
       )
 };
 
 export default ModifTransactionForm;
+
+
+
+            // <h1>Transaction ID: {transactionId}</h1>
+            // <form onSubmit={onSubmit} id="transactionForm" method="post" className="transactionProfile"> 
+            //     {/* <TransactionProfile></TransactionProfile> */}
+            //     <div className="row-mt-2">
+            //         <div className="col-md-6">
+            //             <label className="labels" htmlFor="userInput">User</label>
+            //             <input readOnly onChange={(e) => setUsername(e.target.value)} id="userInput" type="text" className="form-control" value={username}></input>
+            //             {/* <ProfileEntryInput defaultval="Choose the user..."/> */}
+            //         </div>
+            //     </div>
+            //     <div className="row-mt-2">
+            //         <div className="col-md-6">
+            //             <label className="labels" htmlFor="amountInput">Amount</label>
+            //             <input readOnly onChange={(e) => setAmount(parseFloat(e.target.value))} id="amountInupt" type="number" className="col-md-6 form-control" value={amount}></input>
+            //         </div>
+            //         <div className="col-md-6">
+            //             <label className="labels" htmlFor="transactionTypeInput">Transaction Type</label>
+            //             <input readOnly onChange={(e) => setTransactionType(e.target.value)} id="transactionTypeInupt" type="text" className="col-md-6 form-control" value={transactionType}></input>
+            //         </div>
+            //     </div>
+            //     <div className="col-md-6">
+            //         <label className="labels" htmlFor="timestampInput">Transaction Type</label>
+            //         <input readOnly id="timestampInupt" type="date" onChange={(e) => setTimestamp(e.target.value)} className="col-md-6 form-control" value={timestamp}></input>
+            //     </div>
+            //     <div className="col-md-6">
+            //         <label className="labels" htmlFor="descriptionInput">Description</label>
+            //         <input readOnly onChange={(e) => setDescription(e.target.value)} id="descriptionInput" type="text" className="col-md-6 form-control" value={description}></input>
+            //     </div>
+            //     {buttons}
+            // </form>
+            // <Snackbar open={!success && transactionSubmitted} autoHideDuration={6000} onClose={handleClose}>
+            //     <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+            //         Failed to modified transaction...
+            //     </Alert>
+            // </Snackbar>
+            // <Snackbar open={success && transactionSubmitted} autoHideDuration={6000} onClose={handleClose}>
+            //     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            //         Successfully modified transaction!
+            //     </Alert>
+            // </Snackbar>

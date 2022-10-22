@@ -1,10 +1,12 @@
 .topbar {
   margin-bottom: 0em; 
-  font-size:1.1em;
-  background: linear-gradient(var(--main-color-1), var(--main-color-2));
+  font-size:1.3em;
+  // background: linear-gradient(var(--alpatab-light_red), var(--alpatab-blue_white));
+  background-color: var(--alpatab-light_red);
+  height: 5.5em;
 
   .navbar-brand {
-    padding-left: 3em;
+    padding-left: 2.4em;
     padding-right: 2em;
   }
 
@@ -14,11 +16,12 @@
 
   .right-side-container {
     margin-left: auto;
-    padding-right: 3em;
+    padding-right: 2vw;
     display: flex;
   }
 
   .loginWrapper {
     // padding-left: 2.5em;
   }
+
 }

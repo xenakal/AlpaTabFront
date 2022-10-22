@@ -155,36 +155,32 @@ const ModifUserForm: React.FC = () => {
 
     // return transactionAdded ? <Redirect to="/transactions" push/> : 
     return (
-        <>
-            <h1>User ID: {originalUser?.id}</h1>
+        <div className="contentPage">
+            <h1>User: {originalUser?.nickName}</h1>
             <form onSubmit={onSubmit} id="transactionForm" method="post" className="transactionProfile"> 
                 {/* <TransactionProfile></TransactionProfile> */}
-                <div className="row-mt-2">
-                    <div className="col-md-6">
+                    <div className="userInputWrapper">
                         <label className="labels" htmlFor="nicknameInput">NickName</label>
                         <input readOnly onChange={(e) => setNickName(e.target.value)} id="nicknameInput" type="text" className="form-control" value={nickName}></input>
                         {/* <ProfileEntryInput defaultval="Choose the user..."/> */}
                     </div>
-                </div>
-                <div className="row-mt-2">
-                    <div className="col-md-6">
+                    <div className="userInputWrapper">
                         <label className="labels" htmlFor="emailInput">Email</label>
                         <input readOnly onChange={(e) => setEmail(e.target.value)} id="emailInupt" type="text" className="col-md-6 form-control" value={email}></input>
                     </div>
-                    <div className="col-md-6">
+                    <div className="userInputWrapper">
                         <label className="labels" htmlFor="firstNameInput">First Name</label>
                         <input readOnly onChange={(e) => setFirstName(e.target.value)} id="firstNameInupt" type="text" className="col-md-6 form-control" value={firstName}></input>
                     </div>
-                </div>
-                <div className="col-md-6">
+                <div className="userInputWrapper">
                     <label className="labels" htmlFor="lastNameInput">Last Name</label>
                     <input readOnly onChange={(e) => setLastName(e.target.value)} id="lastNameInupt" type="text" className="col-md-6 form-control" value={lastName}></input>
                 </div>
-                <div className="col-md-6">
+                <div className="userInputWrapper">
                     <label className="labels" htmlFor="userTypeInput">User type</label>
                     <input readOnly onChange={(e) => setUserType(e.target.value)} id="userTypeInupt" type="text" className="col-md-6 form-control" value={userType}></input>
                 </div>
-                <div className="col-md-6">
+                <div className="userInputWrapper">
                     <label className="labels" htmlFor="descriptionInput">Balance</label>
                     <input readOnly id="descriptionInput" type="number" className="col-md-6 form-control" value={balance}></input>
                 </div>
@@ -201,7 +197,7 @@ const ModifUserForm: React.FC = () => {
                 </Alert>
             </Snackbar>
 
-        </>
+        </div>
       )
 };
 

@@ -1,4 +1,4 @@
-import Topbar  from '../topbar/Topbar';
+import Topbar from "../topbar/Topbar"
 import "./sharedLayout.scss"
 
 const SharedLayout = ({ children }) => {
@@ -7,7 +7,7 @@ const SharedLayout = ({ children }) => {
             <Topbar/>
             <main className="background">
                 <div className="root">
-                    <div className="pagecontent">
+                    <div className="contentContainer">
                         {children}
                     </div>
                 </div>

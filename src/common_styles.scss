@@ -1,4 +1,38 @@
-input:read-only {
-    background-color: lightgray;
-    pointer-events:none;
+
+
+.userInputWrapper {
+    width: 40%;
+
+    input:read-only {
+        background-color: var(--alpatab-light_blue);
+        pointer-events:none;
+    }
+}
+
+.contentPage {
+
+    display: flex; 
+    flex-direction: column;
+    align-items: strech;
+
+    h1 {
+        border-bottom: solid thick var(--alpatab-red);
+        color: var(--alpatab-red);
+        margin-bottom: 3vh;
+    }
+
+    .listContainer {
+        // padding: 0;
+        // max-width: none;
+        // width: 100%;
+        // margin: 0 auto;
+        // flex:1;
+    }
+
+    button {
+        border-color: var(--alpatab-dark_blue);
+        color: var(--alpatab-dark_blue);
+        margin-top:3em; 
+        margin-right:2em;
+    }
 }

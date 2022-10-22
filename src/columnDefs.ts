@@ -1,5 +1,9 @@
 // REFACTOR needed to make more generic. Ideas: 
 //// get from db ? 
+
+import moment from 'moment';
+import { GridRenderCellParams } from '@mui/x-data-grid';
+
 //// use introspection (?) on ITransactionModel & IUserModel ? 
 export const getUserColumnNames = () => {
   return [
@@ -19,7 +23,9 @@ export const getTransactionColumnNames = () => {
     { field: "nickName", headerName: "User Nickname", flex:1 },
     { field: "amount", headerName: "Amount", flex:1 },
     { field: "transactionType", headerName: "Transaction Type", flex:1 },
-    { field: "timestamp", headerName: "Timestamp", flex:1 },
+    { field: "timestamp", headerName: "Timestamp", flex:1, 
+        renderCell: (params: GridRenderCellParams<Date>) => moment(params.row.timestamp).format("DD/MM/YY hh:mm")
+    },
     { field: "description", headerName: "Description", flex:1 },
   ];
 }

@@ -42,12 +42,17 @@ const deleteTransaction = (id: number | string) => {
     return http.delete<ITransactionModel>(`/transactions/${id}`);
 }
 
+const getUserTransactions = (id: number | string) => {
+    return http.get<ITransactionModel[]>(`/transactions/users/${id}`);
+}
+
 const AlpaTabDataService = {
     getAllUsers,
     getUser, 
     addUser, 
     getAllTransactions,
     getTransaction, 
+    getUserTransactions, 
     addTransaction, 
     modifyTransaction,
     modifyUser,

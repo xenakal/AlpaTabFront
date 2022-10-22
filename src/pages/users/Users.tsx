@@ -1,4 +1,5 @@
 import "./users.scss"
+import '../../common_styles.scss';
 import { getUserColumnNames } from "../../columnDefs"
 import Datatable from "../../components/datatable/Datatable"
 import Axios from "axios"
@@ -38,7 +39,8 @@ const Users: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="contentPage">
+      <h1>Users list</h1>
       <div className="listContainer">
         <Datatable 
           title="Users List" 
